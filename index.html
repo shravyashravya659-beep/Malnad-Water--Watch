@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malnad WaterWatch | Rainwater Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><span class="brand-icon">💧</span> Malnad WaterWatch</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#regions">Regions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="btn btn-light btn-sm px-3 ms-lg-2" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="eyebrow">SMART WATER • STRONGER COMMUNITIES</span>
+          <h1>Every drop saved.<br><span>Every community supported.</span></h1>
+          <p class="hero-copy">A concept dashboard for collecting rainwater in high-rainfall areas and planning its delivery to water-stressed communities.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#dashboard" class="btn btn-success btn-lg">Explore Dashboard <span aria-hidden="true">→</span></a>
+            <a href="#about" class="btn btn-outline-light btn-lg">How it works</a>
+          </div>
+          <p class="demo-note mt-3">Student prototype · Sample data for demonstration</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="hero-visual">
+            <div class="rain-cloud">🌧️</div>
+            <div class="water-drop">💧</div>
+            <div class="hill hill-back"></div><div class="hill hill-front"></div>
+            <div class="water-wave"></div>
+            <div class="visual-label"><span class="pulse-dot"></span> Water conservation starts here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-pad" id="dashboard">
+      <div class="container">
+        <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
+          <div><span class="eyebrow green-text">OVERVIEW</span><h2>Water dashboard</h2><p>Quick insights from the sample monitoring data.</p></div>
+          <span class="data-badge">● Demo data</span>
+        </div>
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6 col-xl-3"><article class="metric-card"><div class="metric-top"><span class="metric-icon blue">🌧️</span><span class="metric-caption">This month</span></div><p class="metric-label">Rainfall recorded</p><h3><span id="rainfallValue">286</span> <small>mm</small></h3><div class="metric-foot">Across monitored sample zones</div></article></div>
+          <div class="col-sm-6 col-xl-3"><article class="metric-card"><div class="metric-top"><span class="metric-icon teal">💧</span><span class="metric-caption">Sample capacity</span></div><p class="metric-label">Water stored</p><h3><span id="storedValue">68</span><small>%</small></h3><div class="progress mt-3"><div class="progress-bar" style="width:68%"></div></div></article></div>
+          <div class="col-sm-6 col-xl-3"><article class="metric-card"><div class="metric-top"><span class="metric-icon orange">🏘️</span><span class="metric-caption">Priority list</span></div><p class="metric-label">Communities flagged</p><h3><span id="communityValue">4</span> <small>areas</small></h3><div class="metric-foot">For needs assessment</div></article></div>
+          <div class="col-sm-6 col-xl-3"><article class="metric-card"><div class="metric-top"><span class="metric-icon purple">♻️</span><span class="metric-caption">Planning target</span></div><p class="metric-label">Reuse potential</p><h3><span id="reuseValue">72</span><small>%</small></h3><div class="metric-foot">Illustrative conservation goal</div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad soft-bg" id="regions">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow green-text">REGIONAL SNAPSHOT</span><h2>Explore sample regions</h2><p>Choose a region to view its illustrative rainfall and water status.</p></div>
+        <div class="row g-4 mt-1">
+          <div class="col-lg-7">
+            <div class="region-panel">
+              <div class="panel-title"><div><h3>Region status</h3><p>Sample monitoring locations</p></div><span class="live-pill">● Overview</span></div>
+              <div class="region-list" id="regionList">
+                <button class="region-row selected" data-region="0"><span class="region-emoji">🌲</span><span class="region-info"><strong>Madikeri</strong><small>High-rainfall collection zone</small></span><span class="status status-green">Collection</span><span class="row-arrow">›</span></button>
+                <button class="region-row" data-region="1"><span class="region-emoji">🌿</span><span class="region-info"><strong>Somwarpet</strong><small>Storage monitoring zone</small></span><span class="status status-blue">Monitoring</span><span class="row-arrow">›</span></button>
+                <button class="region-row" data-region="2"><span class="region-emoji">🌾</span><span class="region-info"><strong>Dry-zone village</strong><small>Needs assessment required</small></span><span class="status status-orange">Priority</span><span class="row-arrow">›</span></button>
+              </div>
+              <div class="region-detail" id="regionDetail"><div><span class="detail-label">SELECTED REGION</span><h4 id="detailName">Madikeri</h4><p id="detailDescription">Illustrative high-rainfall collection zone.</p></div><div class="detail-number"><strong id="detailRain">286 mm</strong><span>Sample monthly rainfall</span></div></div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="chart-panel h-100">
+              <div class="panel-title"><div><h3>Monthly rainfall</h3><p>Illustrative values in millimetres</p></div><span class="chart-icon">↗</span></div>
+              <div class="chart" aria-label="Bar chart showing sample monthly rainfall">
+                <div class="chart-column"><span>180</span><div style="height:48%"></div><small>Jun</small></div>
+                <div class="chart-column"><span>240</span><div style="height:64%"></div><small>Jul</small></div>
+                <div class="chart-column"><span>286</span><div class="bar-highlight" style="height:77%"></div><small>Aug</small></div>
+                <div class="chart-column"><span>210</span><div style="height:56%"></div><small>Sep</small></div>
+                <div class="chart-column"><span>125</span><div style="height:34%"></div><small>Oct</small></div>
+                <div class="chart-column"><span>90</span><div style="height:24%"></div><small>Nov</small></div>
+              </div>
+              <div class="chart-legend"><span><i></i> Monthly rainfall (sample)</span><strong>Aug · 286 mm</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="about">
+      <div class="container">
+        <div class="section-heading text-center mx-auto"><span class="eyebrow green-text">OUR APPROACH</span><h2>From rainfall to reliable supply</h2><p>The prototype illustrates a possible planning workflow. Real implementation requires field data, engineering review and local approvals.</p></div>
+        <div class="row g-4 mt-3">
+          <div class="col-md-4"><div class="step-card"><span class="step-number">01</span><div class="step-emoji">🌧️</div><h3>Monitor rainfall</h3><p>Collect rainfall and catchment information from verified sources or sensors.</p></div></div>
+          <div class="col-md-4"><div class="step-card"><span class="step-number">02</span><div class="step-emoji">🛢️</div><h3>Plan storage</h3><p>Estimate available storage, water quality and safe collection capacity.</p></div></div>
+          <div class="col-md-4"><div class="step-card"><span class="step-number">03</span><div class="step-emoji">🚰</div><h3>Prioritise supply</h3><p>Assess community demand and plan feasible distribution with local authorities.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div><span class="eyebrow">BUILD A WATER-SMART FUTURE</span><h2>Have a suggestion for this project?</h2><p>Share an idea to help improve the student prototype.</p></div>
+          <form id="suggestionForm" class="suggestion-form"><label for="suggestion" class="form-label">Your suggestion</label><div class="input-group"><input id="suggestion" class="form-control" type="text" placeholder="Enter your idea..." required maxlength="180"><button class="btn btn-light" type="submit">Submit</button></div><div id="formMessage" class="form-message" role="status"></div></form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container d-flex flex-wrap justify-content-between gap-2"><span>💧 Malnad WaterWatch</span><span>Student project prototype · Sample data only</span><span>© <span id="year"></span></span></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
